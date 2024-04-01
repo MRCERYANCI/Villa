@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@await Component.InvokeAsync("_AdminHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_AdminPreloaderComponentPartial")
+    <div id="main-wrapper">
+        @await Component.InvokeAsync("_AdminHeaderComponentPartial")
+
+        @await Component.InvokeAsync("_AdminNavBarComponentPartial")
+
+        @await Component.InvokeAsync("_AdminSideBarComponentPartial")
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>@ViewData["Title"]</h4>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">@TempData["Controller"]</a></li>
+                            <li class="breadcrumb-item active"><a href="javascript:void(0)">@TempData["Action"]</a></li>
+                        </ol>
+                    </div>
+                </div>
+                @RenderBody()
+            </div>
+        </div>
+        @await Component.InvokeAsync("_AdminFooterComponentPartial")
+    </div>
+    @await Component.InvokeAsync("_AdminScriptComponentPartial")
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

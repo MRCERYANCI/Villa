@@ -1,0 +1,33 @@
+﻿@model CreateVideoDto
+
+@{
+    ViewData["Title"] = "Video Giriş Alanı";
+    Layout = "~/Views/Shared/_AdminTemplateLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Yeni Video Alanı Girişi</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="POST">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <input asp-for="VideoUrl" type="text" class="form-control input-default" placeholder="Lütfen Video Url'ini Giriniz..." autocomplete="off">
+                            <span asp-validation-for="VideoUrl" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="CoverImage" type="text" class="form-control input-default" placeholder="Lütfen Image Url'i Giriniz..." autocomplete="off">
+                            <span asp-validation-for="CoverImage" class="text-danger"></span>
+                        </div>
+                        <button class="btn btn-outline-primary">Kaydet</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

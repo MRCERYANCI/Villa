@@ -1,0 +1,18 @@
+﻿@model List<ResultContactDto>
+
+<div class="sub-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+                <ul class="info">
+                    @foreach(var Contact in Model)
+                    {
+                        <li><i class="fa fa-envelope"></i> @Contact.Email</li>
+                        <li><i class="fa fa-map"></i> @Contact.Adress</li>
+                    }
+                </ul>
+            </div>
+            @await Component.InvokeAsync("_UISocialMediaComponentPartial")
+        </div>
+    </div>
+</div>

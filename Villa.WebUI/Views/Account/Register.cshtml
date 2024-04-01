@@ -1,0 +1,85 @@
+﻿@model CreateRegisterDto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Çokkeçeci İnşaat - Kayıt Ol</title>
+    <link rel="stylesheet" href="~/Login&Register Temaları/colorlib-regform-7/colorlib-regform-7/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="~/Login&Register Temaları/colorlib-regform-7/colorlib-regform-7/css/style.css">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/icon/favicon (4).ico">
+</head>
+<body>
+
+    <div class="main">
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title">Kayıt Ol Alanı</h2>
+                        <form method="POST" class="register-form" id="register-form">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" asp-for="Name" id="name" placeholder="Lütfen Adınızı Giriniz..."/>
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" asp-for="Surname" id="name" placeholder="Lütfen Soyadınızı Giriniz..." />
+                                <span asp-validation-for="Surname" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" asp-for="Email" id="email" placeholder="Lütfen Mail Adresinizi Giriniz..." />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" asp-for="PhoneNumber" id="email" placeholder="Lütfen Telefon Numaranızı Giriniz..." />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="text" asp-for="UserName" id="email" placeholder="Lütfen Kullanıcı Adınızı Giriniz..." />
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" asp-for="Password" id="re_pass" placeholder="Lütfen Bir Şifre Belirleyiniz..." />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" asp-for="ConfirmPassword" id="re_pass" placeholder="Lütfen Belirlediğiniz Şifrenizi Giriniz..." />
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>Tüm şartları okudum  <a href="#" class="term-service">Kabul Ediyorum</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" id="signup" class="form-submit" value="Kayıt Ol"/>
+                            </div>
+                        </form>
+                    </div>
+                     <div class="signup-image">
+                        <figure><img src="~/Login&Register Temaları/colorlib-regform-7/colorlib-regform-7/images/signup-image.jpg" alt="sing up image"></figure>
+                        <a href="/Account/Login" class="signup-image-link">Saten Üyeyim Giriş Yap</a>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <script src="~/Login&Register Temaları/colorlib-regform-7/colorlib-regform-7/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Login&Register Temaları/colorlib-regform-7/colorlib-regform-7/js/main.js"></script>
+</body>
+</html>

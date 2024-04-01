@@ -1,0 +1,40 @@
+﻿@model CreateMessageDto
+
+@{
+    ViewData["Title"] = "Mesaj Gönderme Alanı";
+    Layout = "~/Views/Shared/_AdminTemplateLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Mesaj Ekleme Alanı Girişi</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="post">
+                        <div class="form-group">
+                            <input type="text" asp-for="Name"  class="form-control input-default" placeholder="Adınız Soyadınızı Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" asp-for="Email"  class="form-control input-default" placeholder="deneme@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="PhoneNumber"  class="form-control input-default" placeholder="+90 895 452 78 96" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" asp-for="Subject" class="form-control input-default" placeholder="Lütfen Mesaj Konusunu Belirtiniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control input-default" asp-for="MessageContact" placeholder="Lütfen Mesaj İçeriğini Giriniz..." required rows="9"></textarea>
+                        </div>
+                       
+
+                        <button class="btn btn-outline-primary">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

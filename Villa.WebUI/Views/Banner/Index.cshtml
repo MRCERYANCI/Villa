@@ -1,0 +1,60 @@
+﻿@model List<ResultBannerDto>
+
+@{
+    ViewData["Title"] = "Banner Listesi";
+    Layout = "~/Views/Shared/_AdminTemplateLayout.cshtml";
+    int Count = 0;
+}
+
+@if(Model.Count == 0)
+{
+    <div class="alert alert-danger solid ">
+        <strong>Error!</strong> Sunucuda Veri Bulunamadı!
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Banner Tablosu(@Model.Count)</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-responsive-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>İl</th>
+                                    <th>Ülke</th>
+                                    <th>Başlık</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var Banners in Model)
+                                {
+                                    Count++;
+
+                                    <tr>
+                                        <td>@Count</td>
+                                        <td>@Banners.City</td>
+                                        <td>@Banners.Country</td>
+                                        <td>@Banners.Title</td>
+                                        <td>
+                                            <a asp-controller="Banner" asp-action="DeleteBanner" asp-route-id="@Banners.Id" class="btn btn-outline-danger">Sil</a>
+                                            <a asp-controller="Banner" asp-action="GetBannerById" asp-route-id="@Banners.Id" class="btn btn-outline-warning">Güncelle</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<a asp-controller="Banner" asp-action="CreateBanner" class="btn btn-outline-primary">Yeni Banner Ekle</a>

@@ -1,0 +1,77 @@
+﻿@model List<ResultDealsDto>
+@{
+    int Count = 0;
+    int Count1 = 0;
+    string Class = " ";
+    string Class1 = " ";
+}
+
+<div class="section best-deal">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="section-heading">
+                    <h6>| Öne Çıkan Villarımız</h6>
+                    <h2>Modern Konfor, Doğal Güzellik: Villa Sitesi Keşfi</h2>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="tabs-content">
+                    <div class="row">
+                        <div class="nav-wrapper ">
+                            <ul class="nav nav-tabs" role="tablist">
+                                @foreach (var DealsCategory in Model)
+                                {
+                                    Count1++;
+                                    if (Count1 == 1) { Class1 = "nav-link active"; }
+                                    else { Class1 = "nav-link"; }
+                                    
+                                    <li class="nav-item" role="presentation">
+                                        <button class="@Class1" id="@DealsCategory.Type-tab" data-bs-toggle="tab" data-bs-target="#@DealsCategory.Type" type="button" role="tab" aria-controls="@DealsCategory.Type" aria-selected="true">@DealsCategory.Type</button>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+
+                        <div class="tab-content" id="myTabContent">
+                            @foreach (var Deals in Model)
+                            {
+                                Count++;
+                                if (Count == 1) { Class = "tab-pane fade show active"; }
+                                else { Class = "tab-pane fade"; }
+
+                                <div class="@Class" id="@Deals.Type" role="tabpanel" aria-labelledby="@Deals.Type-tab">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <div class="info-table">
+                                                <ul>
+                                                    <li>Toplam m<sup>2</sup> Alanı <span>@Deals.Square m<sup>2</sup></span></li>
+                                                    <li>Kat Sayısı <span>@Deals.Floor</span></li>
+                                                    <li>Oda Sayısı <span>@Deals.RoomCount</span></li>
+                                                    <li>Park Alanı <span>@(Deals.HasParkingArea ? "Var" : "Yok")</span></li>
+                                                    <li>Ödeme Türü <span>@Deals.PaymentType</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <img src="@Deals.ImageUrl" alt="@Deals.Title">
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <h4>@Deals.Title</h4>
+                                            <p>
+                                                @Deals.Description
+                                            </p>
+                                            <div class="icon-button">
+                                                <a href="property-details.html"><i class="fa fa-calendar"></i> Ziyaret Planlayın</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+﻿@model UpdateDealsDto
+
+@{
+    ViewData["Title"] = "Teklif Güncelleme Alanı";
+    Layout = "~/Views/Shared/_AdminTemplateLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Teklif Güncelleme Alanı</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="POST">
+                        <div class="form-group">
+                            <input asp-for="Id" type="hidden" class="form-control input-default" required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Type" type="text" class="form-control input-default " placeholder="Lütfen İlan Türünüzü Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="ImageUrl" type="text" class="form-control input-default " placeholder="Lütfen Resim Url'sini Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Title" type="text" class="form-control input-default " placeholder="Lütfen Başlık Aalanını Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="8" required asp-for="Description" class="form-control input-default" placeholder="Lütfen Açıklama Alanını Giriniz..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Square" type="number" min="1" max="800" class="form-control input-default " placeholder="Lütfen Metrekare Bilgisini Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Floor" type="number" min="1" max="50" class="form-control input-default " placeholder="Lütfen Kat Bilgisini Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="RoomCount" type="number" min="1" max="50" class="form-control input-default " placeholder="Lütfen Oda Sayısını Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <select asp-for="HasParkingArea" class="form-control input-default ">
+                                <option value="true">Var</option>
+                                <option value="false">Yok</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select asp-for="PaymentType" class="form-control input-default ">
+                                <option value="Kredi Kartı">Kredi Kartı</option>
+                                <option value="Nakit">Nakit</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-outline-primary">Güncelle</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

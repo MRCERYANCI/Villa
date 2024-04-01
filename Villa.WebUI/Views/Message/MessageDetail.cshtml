@@ -1,0 +1,37 @@
+﻿@model UpdateMessageDto
+
+@{
+    ViewData["Title"] = "Mesaj Detayları";
+    Layout = "~/Views/Shared/_AdminTemplateLayout.cshtml";
+}
+<div class="row">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th>Gönderen Ad Soyad:</th>
+                    <th>@Html.DisplayFor(x => x.Name)</th>
+                </tr>
+                <tr>
+                    <th>Gönderen Email:</th>
+                    <th>@Html.DisplayFor(x => x.Email)</th>
+                </tr>
+                <tr>
+                    <th>Gönderen Telefon Numarası:</th>
+                    <th>@Html.DisplayFor(x => x.PhoneNumber)</th>
+                </tr>
+                <tr>
+                    <th>Konu:</th>
+                    <th>@Html.DisplayFor(x => x.Subject)</th>
+                </tr>
+                <tr>
+                    <th>Mesaj İçeriği:</th>
+                    <th>@Html.DisplayFor(x => x.MessageContact)</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<a class="btn btn-outline-primary" asp-action="Index" asp-controller="Message">Geri Dön</a>
+<a class="btn btn-outline-dark" asp-action="ReplyMessage" asp-controller="Message">Cevapla</a>

@@ -1,0 +1,33 @@
+﻿@model UpdateCounterDto
+
+@{
+    ViewData["Title"] = "Sayaç Güncelleme Alanı";
+    Layout = "~/Views/Shared/_AdminTemplateLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Sayaç Güncelleme Alanı</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="POST">
+                        <div class="form-group">
+                            <input asp-for="Id" type="hidden" class="form-control input-default" required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Title" type="text" class="form-control input-default " placeholder="Lütfen Sayaç Başlığını Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Count" type="number" class="form-control input-default " placeholder="Lütfen Sayaç Sayısı Giriniz..." required>
+                        </div>
+                        <button class="btn btn-outline-primary">Güncelle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

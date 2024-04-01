@@ -1,0 +1,23 @@
+﻿@model List<ResultMessageDto>
+
+<div class="dropdown-menu dropdown-menu-right">
+    <ul class="list-unstyled">
+        @foreach(var Message in Model)
+        {
+            <li class="media dropdown-item">
+                <span class="success"><i class="ti-user"></i></span>
+                <div class="media-body">
+                    <a href="/Message/MessageDetail/@Message.Id">
+                        <p>
+                            <strong>@Message.Name</strong> kullanıcıdan <strong>bir </strong> mesaj var
+                        </p>
+                    </a>
+                </div>
+                <span class="notify-time">@(((DateTime)Message.CreatedDate).ToString("t")) @(((DateTime)Message.CreatedDate).ToString("tt"))</span>
+            </li>
+        }
+    </ul>
+    <a class="all-notification" asp-action="Index" asp-controller="Message">
+        Tüm Bildirimleri Gör <i class="ti-arrow-right"></i>
+    </a>
+</div>

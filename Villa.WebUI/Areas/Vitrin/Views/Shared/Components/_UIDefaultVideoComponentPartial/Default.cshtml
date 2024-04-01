@@ -1,0 +1,30 @@
+﻿@model List<ResultVideoDto>
+
+<div class="video section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4">
+                <div class="section-heading text-center">
+                    <h6>| Video Alanı</h6>
+                    <h2>Villaların Zarafeti: Sessizliğin Gücü</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@foreach(var Videos in Model)
+{
+    <div class="video-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="video-frame">
+                        <img src="@Videos.CoverImage" alt="">
+                        <a href="@Videos.VideoUrl" target="_blank"><i class="fa fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

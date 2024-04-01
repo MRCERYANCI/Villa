@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+@await Component.InvokeAsync("_UIHeadComponentPartial")
+<body>
+    @await Component.InvokeAsync("_UIPreloaderComponentPartial")
+
+    @await Component.InvokeAsync("_UISubHeaderComponentPartial")
+
+    @await Component.InvokeAsync("_UIHeaderComponentPartial")
+
+    @RenderBody()
+
+    @await Component.InvokeAsync("_UIFooterComponentPartial")
+
+    @await Component.InvokeAsync("_UIScriptComponentPartial")
+
+    @await RenderSectionAsync("scripts", required: false)
+</body>
+</html>

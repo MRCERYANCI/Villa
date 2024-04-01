@@ -1,0 +1,56 @@
+﻿@model ResultProductDto
+
+@{
+    ViewData["Title"] = "Mülk Detay Alanı";
+    Layout = "~/Views/Shared/_AdminTemplateLayout.cshtml";
+}
+
+<div class="row">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tr>
+                    <th><img src="@Html.DisplayFor(x => x.ImageUrl)" width="600" height="300" /></th>
+                </tr>
+                <tr>
+                    <th>İlan Adı:</th>
+                    <th>@Html.DisplayFor(x => x.Title)</th>
+                </tr>
+                <tr>
+                    <th>Kategori:</th>
+                    <th>@Html.DisplayFor(x => x.Category)</th>
+                </tr>
+                <tr>
+                    @{decimal FiyatBilgisi = decimal.Parse(Model.Price);}
+                    <th>Fiyat Bilgisi:</th>
+                    <th>@FiyatBilgisi.ToString("C")</th>
+                </tr>
+                <tr>
+                    <th>Kat Sayısı:</th>
+                    <th>@Html.DisplayFor(x => x.Floor)</th>
+                </tr>
+                <tr>
+                    <th>Oda Sayısı:</th>
+                    <th>@Html.DisplayFor(x => x.BedRoomCount)</th>
+                </tr>
+                <tr>
+                    <th>Banyo Sayısı:</th>
+                    <th>@Html.DisplayFor(x => x.BathRoomCount)</th>
+                </tr>
+                <tr>
+                    <th>m<sup>2</sup> Bilgisi</th>
+                    <th>@Html.DisplayFor(x => x.Area) m<sup>2</sup></th>
+                </tr>
+                <tr>
+                    <th>Banyo Sayısı:</th>
+                    <th>@Html.DisplayFor(x => x.BathRoomCount)</th>
+                </tr>
+                <tr>
+                    <th>Park Alanı Sayısı:</th>
+                    <th>@Html.DisplayFor(x => x.ParkingCount)</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<a class="btn btn-outline-primary" asp-action="Index" asp-controller="Product">Geri Dön</a>

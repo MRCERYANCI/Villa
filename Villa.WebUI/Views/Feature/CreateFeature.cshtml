@@ -1,0 +1,53 @@
+﻿@model CreateFeatureDto
+
+@{
+    ViewData["Title"] = "Öne Çıkan Ekleme Alanı";
+    Layout = "~/Views/Shared/_AdminTemplateLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Öne Çıkan Ekleme Alanı Girişi</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="POST">
+                        <div class="form-group">
+                            <input asp-for="ImageUrl" type="text" class="form-control input-default" placeholder="Lütfen Resim Url Bilgisini Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Title" type="text" class="form-control input-default" placeholder="Lütfen Başlık Alanını Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="SubTitle" type="text" class="form-control input-default" placeholder="Lütfen Alt Başlık Alanını Giriniz..." required>
+                        </div>                       
+                        <div class="form-group">
+                            <input asp-for="Square" type="number" min="1" max="800" class="form-control input-default" placeholder="Lütfen Metrekare Bilgisini Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Safety" type="text" class="form-control input-default" placeholder="Lütfen Güvenlik Bilgisini Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <select asp-for="Contract" class="form-control input-default">
+                                <option value="">Kontrat Türü*</option>
+                                <option value="Sözleşme">Sözleşme</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select asp-for="Payment" class="form-control input-default">
+                                <option value="">Ödeme Türü*</option>
+                                <option value="Kredi Kartı">Kredi Kartı</option>
+                                <option value="Nakit">Nakit</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-outline-primary">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

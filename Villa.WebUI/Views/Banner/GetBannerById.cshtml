@@ -1,0 +1,38 @@
+﻿@model UpdateBannerDto
+
+@{
+    ViewData["Title"] = "GetBannerById";
+    Layout = "~/Views/Shared/_AdminTemplateLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xl-12 col-xxl-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Banner Güncelleme Alanı</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <form method="POST" asp-action="UpdateBanner" asp-controller="Banner">
+                        <div class="form-group">
+                            <input asp-for="Id" type="hidden" class="form-control input-default" required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="City" type="text" class="form-control input-default " placeholder="Şehir Adını Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Title" type="text" class="form-control input-default " placeholder="Lütfen Başlık Alanını Giriniz..." required>
+                        </div>
+                        <div class="form-group">
+                            <input asp-for="Country" type="text" class="form-control input-default " placeholder="Lütfen Ülke Alanını Giriniz..." required>
+                        </div>
+                        <button class="btn btn-outline-primary">Güncelle</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,15 @@
+﻿@model List<ResultBannerDto>
+
+<div class="main-banner">
+    <div class="owl-carousel owl-banner">
+        @foreach(var Banners in Model)
+        {
+            <div class="item item-1">
+                <div class="header-text">
+                    <span class="category">@Banners.Country, <em>@Banners.City</em></span>
+                    <h2>Hurry!<br>@Banners.Title</h2>
+                </div>
+            </div>
+        }
+    </div>
+</div>
